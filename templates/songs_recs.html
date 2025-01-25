@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommended Songs - StereoType</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <link rel="icon" type="image/png" href="static/logo-round-transp.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+
+
+<body class="body-recs">
+  <div class="logo-container">
+    <a href="/home" class="logo-link">
+        <img src="static/logo-round-transp.png" alt="StereoType Logo">
+        <h1 class="logo-name">StereoType</h1>
+    </a>
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <button class="btn btn-secondary" onclick="window.location.href='home'">Home</button>
+    <button class="btn btn-secondary" onclick="window.location.href='recommend_start'">Recommend</button>
+  </div>
+
+  
+  <div class="content-container" id="content-recs">
+    <h2 class="recommended-heading">Songs picked for you</h2>
+    <br>
+    <div class="recommended-songs">
+        <ul>
+            {% for track in recommendations['tracks'][:5] %}
+            <li>
+                <a href="{{ track['external_urls']['spotify'] }}">
+                    <img src="{{ track['album']['images'][0]['url'] }}" alt="Album Art">
+                </a>
+                <br>
+                <p><strong>{{ track['name'] }}</strong> by 
+                {% for artist in track['artists'] %}
+                    {{ artist['name'] }}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                </p>
+            </li>                
+            {% endfor %}
+          </ul>
+      </div>
+  </div>    
+
+  <!-- Footer -->
+  <footer>
+      <p>2024 StereoType</p>
+  </footer>
+<script src="static/script.js"></script>
+</body>ah
