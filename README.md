@@ -31,7 +31,7 @@ Before running this application, you need to have:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/amparopastore/Stereotype-Music-Recommendation-App
+   https://github.com/abhiram27/StereotypeMusic.git
     ```
 
 2. Navigate to the project directory:
@@ -51,17 +51,7 @@ Before running this application, you need to have:
 To run the app locally, execute:
 
 ```bash
-python app.py
+python main.py runserver
 ```
 
-## Demos
 
-![Login Demo](gifs/welcome-page.gif)
-
-![Authorization Demo](gifs/authorization.gif)
-
-![Home Demo](gifs/home-about.gif)
-
-![Dashboard Demo](gifs/dashboard.gif)
-
-![Recommendations Demo](gifs/recommendations.gif)
